@@ -111,10 +111,16 @@ instead of the original's Drosophila fly longevity experiment. Same tool sequenc
 naive vs. censoring-aware MLE fitting (`ExponentialFitter`/`WeibullFitter`), the
 naive-ECDF vs. Kaplan-Meier comparison, Nelson-Aalen cumulative hazard, log-rank
 test, and a full multivariable `CoxPHFitter` model with `check_assumptions`. Two
-real censoring biases are *quantified*, not just asserted: dropping censored
-patients from an MLE fit understates mean survival by ~28%, and treating censored
-patients as failures in a naive survival-function estimate biases it in the
-*opposite* direction.
+real censoring biases are *quantified*, not just asserted, and both come from the
+same root mechanism applied in two places: `scipy.stats.expon.fit()` has no concept
+of censoring, so handing it the raw `time` column for all 228 patients silently
+treats every censored patient's last-known-alive day as their actual death day —
+this understates mean survival by ~28% relative to `lifelines`' censoring-aware
+`ExponentialFitter`. The same shortcut applied to the empirical CDF/survival
+function (instead of Kaplan-Meier) biases the naive survival curve in the
+*opposite* direction. Neither case involves dropping censored patients — both
+notebook and script describe this correctly; only this file's earlier summary
+didn't.
 
 ## Working method used to build these (useful context, not something to repeat blindly)
 
