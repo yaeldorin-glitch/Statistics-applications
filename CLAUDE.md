@@ -6,24 +6,27 @@ this project up.
 ## What this is
 
 A university course project for **"Statistics Applications" (יישומי סטטיסטיקה)**.
-The assignment brief (translated from the original Hebrew):
+The assignment brief, **verbatim, exactly as given by the instructor** (this is the
+literal text — do not paraphrase or reinterpret it):
 
-- Write code notebooks demonstrating **complete mastery of every tool** that appears
-  in the course's three reference notebooks: `pymc-1` (Bayesian coin-flip analysis),
-  `pymc-2` (Bayesian MCMC/regression), and `lifelines` (survival analysis).
-- Use **different datasets** than the ones in those original notebooks.
-- In the two PyMC notebooks specifically: **compare the Bayesian approach to the
-  classical approach, side by side**. The classical approaches are the ones taught
-  in the course's `scipy-stats` and `statsmodels` reference notebooks.
-- Record a video (or several, one per notebook, at least ~1 hour combined) walking
-  through each notebook in detail, explaining every non-trivial statistical or
-  methodological point (not basic programming).
-- Work with an AI assistant is explicitly encouraged, but the questions asked to it
-  and the answers received must be **incorporated into the notebook itself**, gone
-  over in the video, and **critically verified** — the student is responsible for
-  confirming the AI's answers are actually correct, not just plausible-sounding.
-- Individual work. Submission is a text file with links to the Drive-hosted
-  notebooks and videos (not the files themselves — keep them small/compressed).
+> Project Preparation Guidelines:
+>
+> Create code notebooks demonstrating complete mastery of all the tools featured in
+> the `pymc-1`, `pymc-2`, and `lifelines` notebooks.
+> Select datasets different from those used in the original notebooks.
+> For the `pymc` notebooks: Compare Bayesian problem-solving approaches side-by-side
+> with classical approaches (as found in the `scipy-stats` and `statsmodels`
+> notebooks).
+> Record a video (or videos) of yourself walking through the notebook, explaining
+> every detail thoroughly—except for basic programming concepts.
+> This is an individual assignment.
+> You are encouraged to work with an AI assistant. Include relevant questions
+> within the notebook and review the answers you received during the video.
+> Exercise critical judgment—it is your responsibility to verify the accuracy of
+> the answers you obtain.
+> Submit a text file containing links to your Google Drive files (Colab/Jupyter
+> notebooks and recorded videos) via the submission portal.
+> Do not submit large files; ask the AI how to compress videos.
 
 ## Repository layout
 
