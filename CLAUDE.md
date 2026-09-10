@@ -137,10 +137,16 @@ didn't.
   installed.
 - Each notebook's first code cell pins exact package versions
   (`pip install -q pymc==6.3.1 arviz==1.3.0 ...` etc.) specifically so it behaves
-  identically on Google Colab. **After running that cell, the Colab runtime must
-  be restarted** before running the rest of the notebook — installing over an
-  already-imported package does not take effect otherwise. This is noted inline in
-  each notebook and script.
+  identically on Google Colab. **After running that cell, restarting the Colab
+  runtime** before running the rest of the notebook is recommended as a safety
+  measure, not a strict requirement: `pip install` always updates what's on disk,
+  but anything already *imported* in the current kernel (which can include `numpy`,
+  loaded transitively by Colab itself before the first user cell runs) stays at its
+  old version in memory regardless, for the rest of that session — and `pytensor`
+  (PyMC's backend) is specifically sensitive to a stale `numpy` since it JIT-compiles
+  against it. On a genuinely fresh runtime this has been observed to work fine
+  without restarting; restarting just removes the risk for the cost of one click.
+  This is noted inline in each notebook and script.
 - Every "Chat, ..." question in the notebooks is a real question that was actually
   asked and answered, matching the original notebooks' own phrasing style
   (direct, compound questions addressed to "Chat", sometimes referencing the
