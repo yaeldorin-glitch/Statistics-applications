@@ -58,6 +58,14 @@ including the "Chat, ..." questions posed to an AI assistant and how to explain 
 answers, and explicit descriptions of every graph/table (axes, what they show, what
 to conclude).
 
+**Deliberate division of labor between notebook and script:** the notebooks themselves are kept
+close to the lecturer's own minimal style — section headers, formulas, and the "Chat, ..."
+question/answer pairs — with no analysis, conclusions, or debugging narratives written into
+markdown cells. All of that (interpreting a plot, explaining *why* a result came out the way it
+did, the debugging stories, the closing comparison tables) lives only in the matching script. When
+the script covers a "Chat" answer, it says so explicitly ("...והצ'אט ענה לי ש...") rather than
+quoting the answer as if it were the presenter's own conclusion.
+
 ## The three new notebooks, and how each maps to a reference notebook
 
 ### 1. `1_bayes_vs_frequentist/` — mirrors `6_1_PyMC_bayesian_analysis_coins.ipynb`
