@@ -125,10 +125,14 @@ of censoring, so handing it the raw `time` column for all 228 patients silently
 treats every censored patient's last-known-alive day as their actual death day —
 this understates mean survival by ~28% relative to `lifelines`' censoring-aware
 `ExponentialFitter`. The same shortcut applied to the empirical CDF/survival
-function (instead of Kaplan-Meier) biases the naive survival curve in the
-*opposite* direction. Neither case involves dropping censored patients — both
-notebook and script describe this correctly; only this file's earlier summary
-didn't.
+function (instead of Kaplan-Meier) biases the naive survival curve *the same
+way* — also downward (understating survival), just on a different measure (a
+point-in-time probability rather than the mean) — not in an opposite direction
+as an earlier version of this file, and of script_3 itself, incorrectly
+claimed. Neither case involves dropping censored patients. The notebook's own
+Chat answer already states the correct direction for the ECDF case
+("biases the tail of the survival curve downward (understating survival)");
+script_3 has since been corrected to match.
 
 ## Working method used to build these (useful context, not something to repeat blindly)
 
