@@ -166,15 +166,21 @@ didn't.
   without restarting; restarting just removes the risk for the cost of one click.
   This is noted inline in each notebook and script.
 - Every "Chat, ..." question in the notebooks is a real question that was actually
-  asked and answered, matching the original notebooks' own phrasing style
-  (direct, compound questions addressed to "Chat", sometimes referencing the
-  code/output just above). Several answers include an explicit self-correction —
-  e.g. a plausible-sounding first guess about *which* district was causing a LOO
-  diagnostic warning turned out to be wrong when actually checked, and the
-  notebook shows the check and the corrected explanation rather than hiding the
+  asked and answered (direct, compound questions addressed to "Chat", sometimes
+  referencing the code/output just above). Every question in notebooks 1 and 2 was
+  individually checked against the corresponding lecturer original's own questions —
+  topical overlap is expected and fine (both are demonstrating the same tool, so of
+  course both ask about it), but a handful of questions that were near-verbatim
+  reuses of the lecturer's own phrasing, or answerable from general dataset
+  documentation without needing an AI at all (e.g. "what is the star98 dataset and
+  is it a good fit"), were dropped as Chat exchanges and folded into plain narration
+  in the script instead. Several remaining answers include an explicit
+  self-correction — e.g. a plausible-sounding first guess about *which* district was
+  causing a LOO diagnostic warning turned out to be wrong when actually checked, and
+  the notebook shows the check and the corrected explanation rather than hiding the
   wrong guess. This is intentional: the assignment specifically asks students to
-  demonstrate critical verification of AI-provided answers, not just present
-  clean answers.
+  demonstrate critical verification of AI-provided answers, not just present clean
+  answers.
 
 ## What is NOT covered from the two classical reference notebooks
 
