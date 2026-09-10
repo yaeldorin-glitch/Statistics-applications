@@ -139,10 +139,20 @@ didn't.
   available now (`az.plot_posterior` removed → `az.plot_dist`; `az.compare(...,
   ic="waic")` removed → LOO is now the only option; `hdi_prob=` renamed to
   `prob=`/`ci_prob=` depending on the function; `az.plot_ess(..., kind="evolution")`
-  removed → `kind="local"`). Each of these is called out explicitly, in place, in
-  both the notebook and the matching script — this is deliberate and should not be
-  "fixed" back to the old API without checking which `arviz` version is actually
-  installed.
+  removed → `kind="local"`; `az.summary()`'s default interval kind silently changed
+  from HDI to equal-tailed, now requires explicit `ci_kind="hdi"`). `az.plot_trace()`
+  also changed behavior in a way that isn't a removed argument but is easy to miss:
+  it now renders **only** the sample-path panel, not the density panel the classic
+  version showed alongside it — density is a separate `az.plot_dist()` call now.
+  This was caught because notebook 1's independent and hierarchical models
+  originally had no post-sampling diagnostic plot at all (only `az.summary()`'s
+  `r_hat` column) — the lecturer's own notebook runs `plot_trace`+`plot_posterior`
+  for its analogous models, so `plot_trace` (10 districts) and `plot_forest`
+  (better suited than `plot_trace` for many parameters at once) were added for
+  parity, which is when the single-panel behavior became visible. Each of these is
+  called out explicitly, in place, in both the notebook and the matching script —
+  this is deliberate and should not be "fixed" back to the old API/behavior without
+  checking which `arviz` version is actually installed.
 - Each notebook's first code cell pins exact package versions
   (`pip install -q pymc==6.3.1 arviz==1.3.0 ...` etc.) specifically so it behaves
   identically on Google Colab. **After running that cell, restarting the Colab
